@@ -1,0 +1,26 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env.backup
+.env
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+/public/css
+/public/js
+/public/mix-manifest.json
+# But not these files...
+!/public/assets/*
+/public/app/assets/js
+/public/app/assets/css
+/public/app/assets/vendor
+/public/theme/assets/js
+/public/theme/assets/css
+/public/theme/assets/vendor
