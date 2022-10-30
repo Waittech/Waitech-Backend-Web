@@ -10,7 +10,12 @@ use Illuminate\Support\Arr;
 
 class RegisterController extends Controller
 {
-    public function showRegisterForm()
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
+
+  public function showRegisterForm()
     {
       return view('app.frontend.register');
     }

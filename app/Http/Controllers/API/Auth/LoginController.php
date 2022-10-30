@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\Auth;
 
 use App\Helpers\JsonResponse;
-use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -28,5 +27,12 @@ class LoginController
       (new JsonResponse)->success(['token' => auth()->user()->api_token]),
       Response::HTTP_OK
     );
+  }
+
+  public function logout(Request $request)
+  {
+    $request->user()->forceFill([
+      'api_token' => hash('sha256', Str::random(60)),
+    ])->save();
   }
 }
