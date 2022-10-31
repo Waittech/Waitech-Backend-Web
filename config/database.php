@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Str;
 $DB_CONFIG = parse_url(env('DATABASE_URL'));
+
 return [
 
     /*
