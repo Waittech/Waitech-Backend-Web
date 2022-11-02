@@ -11,6 +11,8 @@ Route::group([
 
   Route::get('/register', 'RegisterController@showRegisterForm')->name('register.form');
   Route::post('/register', 'RegisterController@register')->name('register');
+
+  Route::get('/logout', 'LoginController@logout')->name('logout');
 });
 
 

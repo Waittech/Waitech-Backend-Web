@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('guest')->except(['logout']);
+  }
 
     public function showLoginForm()
     {
@@ -16,14 +20,26 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-      if (!Auth::attempt($request->only('email', 'password'))) {
+      if (Auth::attempt($request->only('email', 'password'))) {
         $request->session()->regenerate();
-        return 'giriş yapıldı';
+
+        return redirect()->route('backend.index');
       }
 
       return back()->withErrors([
-        'message' => trans('auth.failed'),
-      ])->onlyInput('email');
+        'error_message' => trans('auth.failed'),
+      ]);
+    }
+
+    public function logout(Request $request)
+    {
+      Auth::logout();
+
+      $request->session()->invalidate();
+
+      $request->session()->regenerateToken();
+
+      return redirect()->route('frontend.index');
     }
 
 }

@@ -19,8 +19,7 @@
           <!-- Logo -->
           <div class="app-brand justify-content-center">
             <a href="{{url('/theme')}}" class="app-brand-link gap-2">
-              <span class="app-brand-logo demo">@include('app/_partials.macros',["width"=>25,"withbg"=>'#696cff'])</span>
-              <span class="app-brand-text demo text-body fw-bolder">{{config('variables.templateName')}}</span>
+              <img src="{{ asset('app/assets/img/logo.png') }}" height="60">
             </a>
           </div>
           <!-- /Logo -->

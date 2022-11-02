@@ -13,6 +13,7 @@ return [
   */
 
   'failed'   => 'Girilmiş olan kullanıcı verileri sistemdekiler ile eşleşmemektedir.',
+  'failed_register'   => 'Kayıt olurken hata oluştu.',
   'password' => 'Girilen parola hatalı.',
   'throttle' => 'Çok fazla oturum açma girişiminde bulundunuz. Lütfen :seconds saniye sonra tekrar deneyiz.',
 ];

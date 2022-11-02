@@ -23,7 +23,8 @@ Route::group([
 Route::group([
   'namespace'  => 'Backend',
   'as'         => 'backend.',
-  'middleware' => ['auth:x'],
+  'prefix'     => 'app',
+  'middleware' => ['auth'],
 ], function () {
   include_route_files(__DIR__ . '/backend/');
 });

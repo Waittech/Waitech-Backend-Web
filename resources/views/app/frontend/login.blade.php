@@ -14,6 +14,9 @@
         <!-- Register -->
         <div class="card">
           <div class="card-body">
+            @if($errors->has('error_message'))
+              <div class="alert alert-danger">{{ $errors->first('error_message') }}</div>
+            @endif
             <!-- Logo -->
             <div class="app-brand justify-content-center">
               <a href="{{ route('frontend.index') }}" class="app-brand-link gap-2">

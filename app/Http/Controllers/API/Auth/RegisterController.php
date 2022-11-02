@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\Auth;
 
 use App\Helpers\JsonResponse;
 use App\Http\Requests\UserStoreRequest;
-use App\Models\User;
+use App\Models\Access\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
