@@ -1,13 +1,13 @@
 {
   "menu": [
     {
-      "url": "/app/",
+      "url": "/application/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard"
     },
     {
-      "url": "/app/company",
+      "url": "/application/company",
       "name": "Firma Bilgileri",
       "icon": "menu-icon tf-icons bx bx-home-smile",
       "slug": "company-information"
