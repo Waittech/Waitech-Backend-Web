@@ -37,6 +37,16 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+        Route::pattern('id', '\d+');
+        Route::pattern('hash', '[a-z0-9]+');
+        Route::pattern('hex', '[a-f0-9]+');
+        Route::pattern('uuid', '[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}');
+        Route::pattern('slug', '[a-z0-9-]+');
+        Route::pattern('user', '\d+');
+        Route::pattern('role', '\d+');
+        Route::pattern('company', '\d+');
+        Route::pattern('permission', '\d+');
+
         $this->routes(function () {
             Route::prefix('api')
                 ->middleware('api')
