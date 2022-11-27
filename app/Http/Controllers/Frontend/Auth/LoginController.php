@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company\CompanyHasUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,6 +23,14 @@ class LoginController extends Controller
     {
       if (Auth::attempt($request->only('email', 'password'))) {
         $request->session()->regenerate();
+
+        $company = CompanyHasUser::where('user_id', auth()->user()->id)->first();
+
+        if (!$company) {
+          return redirect()->route('frontend.auth.logout');
+        }
+
+        session()->put('company_id', $company->company_id);
 
         return redirect()->route('backend.index');
       }

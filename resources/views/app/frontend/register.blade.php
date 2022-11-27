@@ -18,7 +18,7 @@
         <div class="card-body">
           <!-- Logo -->
           <div class="app-brand justify-content-center">
-            <a href="{{url('/theme')}}" class="app-brand-link gap-2">
+            <a href="{{ url('/') }}" class="app-brand-link gap-2">
               <img src="{{ asset('app/assets/img/logo.png') }}" height="60">
             </a>
           </div>
@@ -32,14 +32,23 @@
             <div class="mb-3">
               <label for="username" class="form-label">Firma Adı</label>
               <input type="text" class="form-control" id="companyname" name="company_name" placeholder="Firma Adını Giriniz" autofocus>
+              @error('company_name')
+                <div class="error">{{ $message }}</div>
+              @enderror
             </div>
             <div class="mb-3">
               <label for="username" class="form-label">Ad Soyad</label>
               <input type="text" class="form-control" id="username" name="name" placeholder="Adınızı ve Soyadınızı giriniz">
+              @error('name')
+                <div class="error">{{ $message }}</div>
+              @enderror
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input type="text" class="form-control" id="email" name="email" placeholder="E-mail adresiniz">
+              @error('email')
+                <div class="error">{{ $message }}</div>
+              @enderror
             </div>
             <div class="mb-3 form-password-toggle">
               <label class="form-label" for="password">Şifre</label>
@@ -47,11 +56,14 @@
                 <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
               </div>
+              @error('password')
+              <div class="error">{{ $message }}</div>
+              @enderror
             </div>
 
             <div class="mb-3">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" required>
                 <label class="form-check-label" for="terms-conditions">
                   <a href="javascript:void(0);"> Kullanıcı sözleşmesi</a>'ni okudum onaylıyorum.
                 </label>
