@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\FormRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
 class UserStoreRequest extends FormRequest
 {
@@ -38,5 +38,15 @@ class UserStoreRequest extends FormRequest
           'email' => ['required', 'email', 'unique:users'],
           'password' => ['required', 'min:6'],
         ];
+    }
+
+    public function attributes()
+    {
+      return [
+        'company_name' => 'Firma Adı',
+        'name'         => 'Ad Soyad',
+        'email'        => 'Email',
+        'password'     => 'Şifre',
+      ];
     }
 }

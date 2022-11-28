@@ -1,10 +1,29 @@
 {
   "menu": [
     {
+<<<<<<< HEAD
       "url": "/app/",
       "name": "Anasayfa",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard"
+=======
+      "url": "/application/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard"
+    },
+    {
+      "url": "/application/company",
+      "name": "Firma Bilgileri",
+      "icon": "menu-icon tf-icons bx bx-home-smile",
+      "slug": "company-information"
+    },
+    {
+      "url": "/application/foods/list",
+      "name": "Ürünler",
+      "icon": "menu-icon tf-icons bx bx-fridge",
+      "slug": "foods-list"
+>>>>>>> 0f9f80203fc79b2a6e2704a2a864f5da15986bf7
     }
 
   ]
