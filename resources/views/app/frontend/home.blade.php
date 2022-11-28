@@ -16,7 +16,7 @@
     <link href="{{asset('app/assets/frontend/css/LineIcons.2.0.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('app/assets/frontend/css/main.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('app/assets/frontend/css/tiny-slider.css')}}" rel="stylesheet" type="text/css" />
-    
+
 
 </head>
 
@@ -61,8 +61,8 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="#assets/frontend" class="page-scroll active"
-                                            aria-label="Toggle navigation">assets/frontend</a>
+                                        <a href="#home" class="page-scroll active"
+                                            aria-label="Toggle navigation">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#features" class="page-scroll"
@@ -94,7 +94,7 @@
     <!-- End Header Area -->
 
     <!-- Start Hero Area -->
-    <section id="assets/frontend" class="hero-area">
+    <section id="home" class="hero-area">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-12 col-12">
@@ -209,7 +209,7 @@
                             </div>
                             <h2>At Your Service In Many Places</h2>
                             <p> We work with many cafes and restaurants. After signing up to our application once, <br>
-                                you can use it in your 
+                                you can use it in your
                                 favourite cafe and save your time by not waiting any ordering queues.
                                 </p>
                         </div>
@@ -469,7 +469,7 @@
     <script type="text/javascript" src="{{URL::asset('app/assets/frontend/js/wow.min.js') }}"></script>
 
 
-        //====== counter up 
+        //====== counter up
         var cu = new counterUp({
             start: 0,
             duration: 2000,
