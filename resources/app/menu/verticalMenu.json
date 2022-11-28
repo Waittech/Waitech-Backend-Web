@@ -11,6 +11,12 @@
       "name": "Firma Bilgileri",
       "icon": "menu-icon tf-icons bx bx-home-smile",
       "slug": "company-information"
+    },
+    {
+      "url": "/application/foods/list",
+      "name": "Ürünler",
+      "icon": "menu-icon tf-icons bx bx-fridge",
+      "slug": "foods-list"
     }
   ]
 }
