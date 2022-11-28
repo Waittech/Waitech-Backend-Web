@@ -41,6 +41,7 @@ class UpdateCompanyRequest extends FormRequest
     {
       return [
         'name'              => 'Firma Adı',
+        'phone_number'      => 'Telefon Numarası',
         'description'       => 'Firma Açıklaması',
         'cover_image'       => 'Firma Resmi',
         'country_id'        => 'Ülke',
