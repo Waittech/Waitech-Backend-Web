@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-      return 'Waitech';
+      return view('app.frontend.home');
     }
 }

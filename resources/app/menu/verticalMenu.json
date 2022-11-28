@@ -2,15 +2,10 @@
   "menu": [
     {
       "url": "/app/",
-      "name": "Dashboard",
+      "name": "Anasayfa",
       "icon": "menu-icon tf-icons bx bx-home-circle",
       "slug": "dashboard"
-    },
-    {
-      "url": "/app/company",
-      "name": "Firma Bilgileri",
-      "icon": "menu-icon tf-icons bx bx-home-smile",
-      "slug": "company-information"
     }
+
   ]
 }
