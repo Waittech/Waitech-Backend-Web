@@ -25,7 +25,7 @@
           <!-- /Logo -->
           <h4 class="mb-2">Hemen aramıza katıl 🚀</h4>
           <p class="mb-4">Kaydını oluştur ve hemen başla!</p>
-
+          <!--Deneme Commit -->
           <form id="formAuthentication" class="mb-3" action="{{ route('frontend.auth.register') }}" method="POST">
             @csrf
             <input type="hidden" name="is_company" value="1">
