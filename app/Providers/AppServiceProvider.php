@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
    */
   public function boot()
   {
+    Paginator::useBootstrap();
+
     // setLocale for php. Enables ->formatLocalized() with localized values for dates
     setlocale(LC_TIME, config('app.locale_php'));
 

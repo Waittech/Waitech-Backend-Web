@@ -13,7 +13,7 @@
       "slug": "company-information"
     },
     {
-      "url": "/application/foods/list",
+      "url": "/application/foods",
       "name": "Ürünler",
       "icon": "menu-icon tf-icons bx bx-fridge",
       "slug": "foods-list"

@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Food extends Model
 {
     use HasFactory, BelongsToCompany;
+
+    protected $table = 'foods';
+
+    public function getStatusTextAttribute() {
+      return $this->status ? 'Aktif' : 'Pasif';
+    }
 }
