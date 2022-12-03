@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
+use NumberFormatter;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    //
+    $this->app->singleton(NumberFormatter::class, function () {
+      return new NumberFormatter('tr_TR', NumberFormatter::DECIMAL);
+    });
   }
 
   /**
