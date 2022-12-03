@@ -15,12 +15,13 @@ class CompanyController extends Controller
     public function index(Request $request)
     {
       $companies = Company::all();
+
       return response()->json((new JsonResponse())->success(CompanyResource::collection($companies), Response::HTTP_OK));
     }
 
     public function show(Request $request, Company $company)
     {
-      $company->menu = MenuResource::collection($company->menu()->active())->groupBy('category.name');
+      $company->menu = $company->menu()->active();
 
       return response()->json((new JsonResponse())->success(new CompanyResource($company), Response::HTTP_OK));
     }
