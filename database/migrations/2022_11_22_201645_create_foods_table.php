@@ -24,7 +24,6 @@ return new class extends Migration
             $table->unsignedTinyInteger('status')->default(1);
             $table->timestamps();
 
-            $table->unique(['company_id']);
             $table->foreign('company_id')
               ->references('id')
               ->on('companies')

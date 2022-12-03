@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API\Company;
 use App\Helpers\JsonResponse;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CompanyResource;
+use App\Http\Resources\MenuResource;
 use App\Models\Company\Company;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -19,7 +20,8 @@ class CompanyController extends Controller
 
     public function show(Request $request, Company $company)
     {
-      $company->menu = 'Deneme';
+      $company->menu = MenuResource::collection($company->menu()->active())->groupBy('category.name');
+
       return response()->json((new JsonResponse())->success(new CompanyResource($company), Response::HTTP_OK));
     }
 }

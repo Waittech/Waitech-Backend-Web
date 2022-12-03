@@ -3,7 +3,9 @@
 namespace App\Models\Company\Traits;
 
 use App\Models\Access\User;
+use App\Models\Food\Menu;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait CompanyRelationships
 {
@@ -14,4 +16,10 @@ trait CompanyRelationships
       'company_has_users'
     );
   }
+
+  public function menu(): HasMany
+  {
+    return $this->hasMany(Menu::class);
+  }
+
 }
