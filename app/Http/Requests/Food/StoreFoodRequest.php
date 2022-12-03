@@ -26,10 +26,11 @@ class StoreFoodRequest extends FormRequest
 
 
         return [
-          'name'         => 'required',
-        'sales_price'    => 'required|numeric',
-        'description'    => 'nullable|string',
-        'vat_rate'       => 'required|numeric',
+          'name'           => 'required',
+          'sales_price'    => 'required|numeric',
+          'description'    => 'nullable|string',
+          'vat_rate'       => 'required|numeric',
+          'status'         => 'sometimes|integer|min:0|digits_between: 0,1'
         ];
     }
 

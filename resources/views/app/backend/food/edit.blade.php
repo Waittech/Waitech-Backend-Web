@@ -7,7 +7,7 @@
     <li class="nav-item"><a class="nav-link" href="{{ route('backend.food.create') }}"><i class='bx bx-plus-circle'></i> Ürün Ekle</a></li>
     <li class="nav-item"><a class="nav-link" href="{{ route('backend.food.index') }}"><i class='bx bx-list-ul' ></i> Ürün Listesi</a></li>
   </ul>
-   
+
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Ürünler /</span> Ürün Güncelle
 </h4>
@@ -29,9 +29,9 @@
         </div>
       @endif
 
-    
-  
-    
+
+
+
         <div class="row">
           <div class="mb-3 col-md-6">
             <label for="name" class="form-label">Ürün Adı</label>
@@ -65,18 +65,18 @@
 
           <div class="mb-3 col-md-6">
             <label for="description" class="form-label">Ürün Açıklaması</label>
-            <textarea class="form-control" id="description" name="description" value="{{ $food->description }}"></textarea>
+            <textarea class="form-control" id="description" name="description">{{ $food->description }}</textarea>
             @error('description')
               <div class="error">{{ $message }}</div>
             @enderror
           </div>
           <div class="mb-3 col-md-6">
             <label class="form-label" for="status">Durum</label>
-              
+
               <select id="status" name="status" class="select2 form-select" >
                 <option value="0" @selected($food->status==0)>Pasif</option>
                 <option value="1" @selected($food->status==1)>Aktif</option>
-              </select>          
+              </select>
             @error('status')
               <div class="error">{{ $message }}</div>
             @enderror
