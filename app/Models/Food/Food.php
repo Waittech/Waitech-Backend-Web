@@ -12,6 +12,10 @@ class Food extends Model
 
     protected $table = 'foods';
 
+    protected $casts = [
+      'sales_price' => 'float',
+    ];
+
     public function getStatusTextAttribute() {
       return $this->status ? 'Aktif' : 'Pasif';
     }
