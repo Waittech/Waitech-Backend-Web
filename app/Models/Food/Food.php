@@ -12,7 +12,18 @@ class Food extends Model
 
     protected $table = 'foods';
 
+    protected $fillable = [
+        'company_id',
+        'name',
+        'description',
+        'image_url',
+        'sales_price',
+        'vat_rate',
+        'district_id',
+        'status',
+      ];
+    
     public function getStatusTextAttribute() {
-      return $this->status ? 'Aktif' : 'Pasif';
+      $this->status ? 'Aktif' : 'Pasif';
     }
 }
