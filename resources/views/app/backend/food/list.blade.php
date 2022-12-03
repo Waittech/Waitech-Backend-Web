@@ -3,6 +3,10 @@
 @section('title', 'Foods - List')
 
 @section('content')
+<ul class="nav nav-pills flex-column flex-md-row mb-3">
+  <li class="nav-item"><a class="nav-link" href="{{ route('backend.food.create') }}"><i class="bx bx-link-alt me-1"></i> Ürün Ekle</a></li>
+  <li class="nav-item"><a class="nav-link active" href="{{ route('backend.food.index') }}"><i class="bx bx-user me-1"></i> Ürün Listesi</a></li>
+</ul>    
   <h4 class="fw-bold py-3 mb-4">
     <span class="text-muted fw-light">Ürünler /</span> Liste
   </h4>

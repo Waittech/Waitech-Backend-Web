@@ -12,6 +12,17 @@ class Food extends Model
 
     protected $table = 'foods';
 
+    protected $fillable = [
+        'company_id',
+        'name',
+        'description',
+        'image_url',
+        'sales_price',
+        'vat_rate',
+        'district_id',
+        'status',
+      ];
+
     protected $casts = [
       'sales_price' => 'float',
     ];
