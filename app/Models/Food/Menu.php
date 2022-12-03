@@ -27,4 +27,12 @@ class Menu extends Model
     {
       return $this->belongsTo(Food::class);
     }
+
+    public function scopeActive($query)
+    {
+      return $query
+        ->join('foods', 'foods.id', '=', 'menus.food_id')
+        ->where('foods.status', 1)
+        ->get();
+    }
 }
