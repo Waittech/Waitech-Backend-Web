@@ -21,7 +21,7 @@ class CompanyController extends Controller
 
     public function show(Request $request, Company $company)
     {
-      $company->menu = $company->menu()->active();
+      $company->menus = true;
 
       return response()->json((new JsonResponse())->success(new CompanyResource($company), Response::HTTP_OK));
     }
