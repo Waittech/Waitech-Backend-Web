@@ -4,8 +4,8 @@
 
 @section('content')
   <ul class="nav nav-pills flex-column flex-md-row mb-3">
-    <li class="nav-item"><a class="nav-link active" href="{{ route('backend.food.create') }}"><i class='bx bx-plus-circle'></i> Ürün Ekle</a></li>
     <li class="nav-item"><a class="nav-link" href="{{ route('backend.food.index') }}"><i class='bx bx-list-ul' ></i> Ürün Listesi</a></li>
+    <li class="nav-item"><a class="nav-link active" href="{{ route('backend.food.create') }}"><i class='bx bx-plus-circle'></i> Ürün Ekle</a></li>
   </ul>
    
 <h4 class="fw-bold py-3 mb-4">
