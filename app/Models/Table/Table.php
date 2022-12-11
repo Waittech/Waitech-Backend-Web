@@ -9,4 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Table extends Model
 {
     use HasFactory, BelongsToCompany;
+
+    protected $fillable = [
+      'name',
+    ];
 }

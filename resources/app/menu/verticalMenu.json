@@ -22,7 +22,13 @@
       "url": "/application/menu",
       "name": "Menu",
       "icon": "menu-icon tf-icons bx bx-food-menu",
-      "slug": "foods-list"
+      "slug": "menu-list"
+    },
+    {
+      "url": "/application/tables",
+      "name": "Masalar",
+      "icon": "menu-icon tf-icons bx bx-chair",
+      "slug": "tables-list"
     }
   ]
 }
