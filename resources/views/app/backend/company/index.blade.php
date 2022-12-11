@@ -14,10 +14,11 @@
 
   <div class="row">
     <div class="col-md-12">
-      <ul class="nav nav-pills flex-column flex-md-row mb-3">
-        <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i class="bx bx-link-alt me-1"></i> Firma Bilgileri</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{url('app/pages/account-settings-connections')}}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
-      </ul>
+    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+<li class="nav-item"><a class="nav-link active" href="{{ route('backend.company.index') }}"><i class="bx bx-link-alt me-1"></i> Firma Bilgileri</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ route('backend.user.index') }}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ route('backend.user.create') }}"><i class="bx bx-link-alt me-1"></i> Çalışan Ekle</a></li>
+</ul>   
       <div class="card mb-4">
         <form action="{{ route('backend.company.update') }}" method="post" enctype="multipart/form-data">
         @csrf
