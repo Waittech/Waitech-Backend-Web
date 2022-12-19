@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Food;
+namespace App\Http\Requests\Table;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreFoodRequest extends FormRequest
+class TableStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,24 +23,15 @@ class StoreFoodRequest extends FormRequest
      */
     public function rules()
     {
-
-
         return [
           'name'           => 'required',
-          'sales_price'    => 'required|numeric',
-          'description'    => 'nullable|string',
-          'vat_rate'       => 'required|numeric',
-          'status'         => 'sometimes|integer|min:0|digits_between: 0,1'
         ];
     }
 
     public function attributes()
     {
       return [
-        'name'         => 'Ürün Adı',
-        'sales_price'  => 'Satış Fiyatı',
-        'description'  => 'Ürün Açıklaması',
-        'vat_rate'     => 'KDV Değeri',
+        'name'         => 'Masa Adı',
       ];
     }
 }

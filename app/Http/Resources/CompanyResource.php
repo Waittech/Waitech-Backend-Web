@@ -26,7 +26,7 @@ class CompanyResource extends JsonResource
         'district'     => ($district = District::find($this->district_id)) != null ? $district->name : null,
         'neighborhood' => $this->neighborhood_name,
         'street'       => $this->street_name,
-        'menu'         => $this->when($this->menu !== null, $this->menu),
+        'menu'         => $this->when($this->menus, MenuResource::collection($this->menu()->active())->groupBy('category.name')),
       ];
     }
 }

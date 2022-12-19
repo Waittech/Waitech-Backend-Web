@@ -15,26 +15,26 @@ class FoodController extends Controller
     $foods = Food::where('company_id', $company_id)->paginate(10);
     return view('app.backend.food.create');
   }
- 
+
 
   public function store(StoreFoodRequest $request)
   {
     $data = $request->validated();
     $company_id = session()->get('company_id');
-    $data['company_id'] = $company_id; 
+    $data['company_id'] = $company_id;
 
     $food = Food::create(
       $data
     );
     return back()
         ->with('success', 'Ürün başarıyla eklendi.');
-    
+
   }
 
     public function index()
     {
       $company_id = session()->get('company_id');
-      $foods = Food::where('company_id', $company_id)->paginate(1);
+      $foods = Food::where('company_id', $company_id)->paginate(3);
 
       return view('app.backend.food.list', compact('foods'));
     }
@@ -46,13 +46,13 @@ class FoodController extends Controller
     }
 
     public function update(StoreFoodRequest $request, Food $food)
-    {  
+    {
       $data = $request->validated();
      $food->update($data);
-    
+
       return back()
           ->with('success', 'Ürün başarıyla güncellendi.');
-      
+
     }
 
     public function destroy(Food $food)
