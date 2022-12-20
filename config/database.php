@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Str;
-$DB_CONFIG = parse_url(env('DATABASE_URL'));
 
 return [
 
@@ -66,11 +65,12 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => $DB_CONFIG['host'],
-            'port' => $DB_CONFIG['port'],
-            'database' => ltrim($DB_CONFIG['path'], '/'),
-            'username' => $DB_CONFIG['user'],
-            'password' => $DB_CONFIG['pass'],
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
