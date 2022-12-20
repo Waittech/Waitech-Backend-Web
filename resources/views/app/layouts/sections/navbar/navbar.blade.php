@@ -38,8 +38,7 @@ $navbarDetached = ($navbarDetached ?? '');
         <!-- Search -->
         <div class="navbar-nav align-items-center">
           <div class="nav-item d-flex align-items-center">
-            <i class="bx bx-search fs-4 lh-0"></i>
-            <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search...">
+            Waitech Application
           </div>
         </div>
         <!-- /Search -->
@@ -49,7 +48,7 @@ $navbarDetached = ($navbarDetached ?? '');
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
-                <img src="{{ asset('app/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle">
+                <img src="{{ asset('app/assets/img/avatars/default_company.png') }}" alt class="w-px-40 h-auto rounded-circle">
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -58,12 +57,12 @@ $navbarDetached = ($navbarDetached ?? '');
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
-                        <img src="{{ asset('app/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle">
+                        <img src="{{ asset('app/assets/img/avatars/default_company.png') }}" alt class="w-px-40 h-auto rounded-circle">
                       </div>
                     </div>
                     <div class="flex-grow-1">
                       <span class="fw-semibold d-block">Burak Erşen</span>
-                      <small class="text-muted">Admin</small>
+                      <small class="text-muted">{{ auth()->user()->roles->first()->name }}</small>
                     </div>
                   </div>
                 </a>
@@ -74,22 +73,13 @@ $navbarDetached = ($navbarDetached ?? '');
               <li>
                 <a class="dropdown-item" href="javascript:void(0);">
                   <i class="bx bx-user me-2"></i>
-                  <span class="align-middle">My Profile</span>
+                  <span class="align-middle">Profil</span>
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" href="javascript:void(0);">
                   <i class='bx bx-cog me-2'></i>
-                  <span class="align-middle">Settings</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <span class="d-flex align-items-center align-middle">
-                    <i class="flex-shrink-0 bx bx-credit-card me-2 pe-1"></i>
-                    <span class="flex-grow-1 align-middle">Billing</span>
-                    <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                  </span>
+                  <span class="align-middle">Ayarlar</span>
                 </a>
               </li>
               <li>
@@ -98,7 +88,7 @@ $navbarDetached = ($navbarDetached ?? '');
               <li>
                 <a class="dropdown-item" href="{{ route('frontend.auth.logout') }}">
                   <i class='bx bx-power-off me-2'></i>
-                  <span class="align-middle">Log Out</span>
+                  <span class="align-middle">Çıkış Yap</span>
                 </a>
               </li>
             </ul>
