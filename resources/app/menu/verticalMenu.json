@@ -29,6 +29,12 @@
       "name": "Masalar",
       "icon": "menu-icon tf-icons bx bx-chair",
       "slug": "tables-list"
+    },
+    {
+      "url": "/application/orders",
+      "name": "Siparişler",
+      "icon": "menu-icon tf-icons bx bx-basket",
+      "slug": "orders-list"
     }
   ]
 }
