@@ -25,3 +25,10 @@ if (! function_exists('include_route_files')) {
     }
   }
 }
+
+if (! function_exists('additional_json_success_arr')) {
+  function additional_json_success_arr()
+  {
+    return ['success' => true, 'message' => null, 'code' => 200];
+  }
+}
