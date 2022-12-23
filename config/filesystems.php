@@ -45,7 +45,7 @@ return [
         'company' => [
           'driver'     => 'local',
           'root'       => storage_path('app/public/company'),
-          'url'        => env('APP_URL') . '/storage/company',
+          'url'        => config('app.url') . '/storage/company',
           'visibility' => 'public',
         ],
 
