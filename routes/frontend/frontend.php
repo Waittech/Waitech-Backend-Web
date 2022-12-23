@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+
 Route::get('/', 'HomeController@index')->name('index');
 
 Route::group([
@@ -13,6 +15,10 @@ Route::group([
   Route::post('/register', 'RegisterController@register')->name('register');
 
   Route::get('/logout', 'LoginController@logout')->name('logout');
+
+  Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+  });
 });
 
 
