@@ -18,6 +18,7 @@ class OrderResource extends JsonResource
           'company'      => new CompanyResource($this->company),
           'table_name'   => $this->table->name,
           'note'         => $this->note,
+          'total_price'  => $this->formatted_price,
           'status'       => $this->status_text,
           'foods'        => FoodResource::collection($this->foods),
           'created_date' => $this->created_date,

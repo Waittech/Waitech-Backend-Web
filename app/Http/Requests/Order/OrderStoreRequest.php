@@ -28,6 +28,7 @@ class OrderStoreRequest extends FormRequest
             'table_id'        => 'required|integer|exists:tables,id',
             'user_id'         => 'required|integer|exists:users,id',
             'note'            => 'nullable',
+            'total_price'     => 'required|regex:/^\d{1,13}(\.\d{1,4})?$/',
             'foods'           => 'required|array|min:1',
             'foods.*.food_id' => 'required|integer|exists:foods,id',
             'foods.*.amount'  => 'required|integer|min:1',
