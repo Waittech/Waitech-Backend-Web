@@ -5,9 +5,13 @@
 @section('content')
 <ul class="nav nav-pills flex-column flex-md-row mb-3">
 <li class="nav-item"><a class="nav-link" href="{{ route('backend.company.index') }}"><i class="bx bx-link-alt me-1"></i> Firma Bilgileri</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ route('backend.user.index') }}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ route('backend.user.create') }}"><i class="bx bx-link-alt me-1"></i> Çalışan Ekle</a></li>
-</ul>    
+@can('view accounts')
+  <li class="nav-item"><a class="nav-link" href="{{ route('backend.user.index') }}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
+@endcan
+@can('manage accounts')
+  <li class="nav-item"><a class="nav-link" href="{{ route('backend.user.create') }}"><i class="bx bx-link-alt me-1"></i> Çalışan Ekle</a></li>
+@endcan
+</ul>
 
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Çalışanlar /</span> Çalışan Bilgileri Güncelle
@@ -58,14 +62,14 @@
             @enderror
           </div>
           <div class="mb-3 col-md-6">
-       
+
             <label class="form-label" for="role">Durum</label>
               <select id="role" name="role" class="select2 form-select" >
               @if ($roles)
       @foreach($roles as $role)
          <option {{ ((old('roles') == $role->id) or (isset($user) and $user->roles->pluck('id')->contains($role->id)) ) ? 'selected' : null }} value="{{$role->id}}">{{$role->name}}</option>
       @endforeach
-    @endif 
+    @endif
               </select>
             @error('status')
               <div class="error">{{ $message }}</div>

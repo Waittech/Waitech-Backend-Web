@@ -79,6 +79,7 @@
             </div>
           </div>
         </div>
+        @can('manage finance')
         <div class="col-md-6 col-12 mb-4">
           <div class="card">
             <div class="card-body">
@@ -97,6 +98,7 @@
             </div>
           </div>
         </div>
+        @endcan
       </div>
     </div>
   </div>
