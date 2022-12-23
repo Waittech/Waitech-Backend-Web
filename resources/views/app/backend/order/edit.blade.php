@@ -47,8 +47,8 @@
         <div class="mb-3 col-md-6">
           <label for="status" class="form-label">Sipariş Durumu</label>
           <select id="status" name="status" class="select2 form-select">
-            @foreach(Arr::except($order->status_texts, [\App\Enums\Order\OrderStatus::CANCELED_BY_USER])  as $key => $text)
-              <option value="{{ $key }}" @selected($order->status == $key)>{{ $text }}</option>
+            @foreach($order->status_texts  as $key => $text)
+              <option value="{{ $key }}" @selected($order->status == $key) @disabled($order->status == \App\Enums\Order\OrderStatus::CANCELED_BY_USER || $key == \App\Enums\Order\OrderStatus::CANCELED_BY_USER)>{{ $text }}</option>
             @endforeach
           </select>
         </div>
