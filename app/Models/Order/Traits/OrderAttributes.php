@@ -50,8 +50,13 @@ trait OrderAttributes
     }
 
     public function getCreatedTimeAttribute()
-      {
+    {
         return $this->created_at->format('H:i:s');
-      }
+     }
+
+    public function getFormattedPriceAttribute()
+    {
+        return number_format($this->total_price, 2);
+    }
 
 }

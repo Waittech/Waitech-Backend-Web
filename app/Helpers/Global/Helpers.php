@@ -32,3 +32,10 @@ if (! function_exists('additional_json_success_arr')) {
     return ['success' => true, 'message' => null, 'code' => 200];
   }
 }
+
+if (! function_exists('price_format')) {
+  function price_format($value)
+  {
+    return number_format($value, 2);
+  }
+}

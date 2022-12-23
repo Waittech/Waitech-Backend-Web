@@ -5,10 +5,14 @@
 @section('content')
 <ul class="nav nav-pills flex-column flex-md-row mb-3">
 <li class="nav-item"><a class="nav-link" href="{{ route('backend.company.index') }}"><i class="bx bx-link-alt me-1"></i> Firma Bilgileri</a></li>
-<li class="nav-item"><a class="nav-link" href="{{ route('backend.user.index') }}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
-<li class="nav-item"><a class="nav-link active" href="{{ route('backend.user.create') }}"><i class="bx bx-link-alt me-1"></i> Çalışan Ekle</a></li>
-</ul>   
-   
+@can('view accounts')
+  <li class="nav-item"><a class="nav-link" href="{{ route('backend.user.index') }}"><i class="bx bx-user me-1"></i> Çalışanlar</a></li>
+@endcan
+@can('manage accounts')
+  <li class="nav-item"><a class="nav-link active" href="{{ route('backend.user.create') }}"><i class="bx bx-link-alt me-1"></i> Çalışan Ekle</a></li>
+@endcan
+</ul>
+
 <h4 class="fw-bold py-3 mb-4">
   <span class="text-muted fw-light">Çalışanlar /</span> Çalışan Ekle
 </h4>
@@ -30,7 +34,7 @@
         </div>
       @endif
 
-    
+
         <div class="row">
           <div class="mb-3 col-md-6">
             <label for="name" class="form-label">Çalışan Adı</label>
