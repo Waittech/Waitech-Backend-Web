@@ -24,6 +24,7 @@
             <th>Masa Adı</th>
             <th>Müşteri Adı</th>
             <th>Durum</th>
+            <th>Fiyat</th>
             <th>Saat</th>
             <th>Tarih</th>
             <th>Edit</th>
@@ -36,6 +37,7 @@
               <td>{{ $order->table->name }}</td>
               <td>{{ $order->user->name }}</td>
               <td><button class="btn border-radius btn-{{ $order->status_color }}">{{ $order->status_text }}</button></td>
+              <td>₺ {{ $order->formatted_price }}</td>
               <td>{{ $order->created_time }}</td>
               <td>{{ $order->created_date }}</td>
               <td>

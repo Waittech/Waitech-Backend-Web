@@ -40,8 +40,8 @@
         </div>
 
         <div class="mb-3 col-md-6">
-          <label for="note" class="form-label">Not</label>
-          <textarea class="form-control" id="note" name="note" disabled>{{ $order->note }}</textarea>
+          <label for="totalPrice" class="form-label">Toplam Fiyat</label>
+          <input class="form-control" type="text" id="totalPrice" name="total_price" value="₺ {{ $order->formatted_price }}" disabled />
         </div>
 
         <div class="mb-3 col-md-6">
@@ -51,6 +51,11 @@
               <option value="{{ $key }}" @selected($order->status == $key) @disabled($order->status == \App\Enums\Order\OrderStatus::CANCELED_BY_USER || $key == \App\Enums\Order\OrderStatus::CANCELED_BY_USER)>{{ $text }}</option>
             @endforeach
           </select>
+        </div>
+
+        <div class="mb-3 col-md-6">
+          <label for="note" class="form-label">Not</label>
+          <textarea class="form-control" id="note" name="note" disabled>{{ $order->note }}</textarea>
         </div>
 
         <div class="table-responsive text-nowrap overflow-visible">
