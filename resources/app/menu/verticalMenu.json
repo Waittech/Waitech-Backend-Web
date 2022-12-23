@@ -4,37 +4,37 @@
       "url": "/application/",
       "name": "Dashboard",
       "icon": "menu-icon tf-icons bx bx-home-circle",
-      "slug": "dashboard"
+      "slug": "index"
     },
     {
       "url": "/application/company",
       "name": "Firma Bilgileri",
       "icon": "menu-icon tf-icons bx bx-home-smile",
-      "slug": "company-information"
+      "slug": "company"
     },
     {
       "url": "/application/foods",
       "name": "Ürünler",
       "icon": "menu-icon tf-icons bx bx-fridge",
-      "slug": "foods-list"
+      "slug": "food"
     },
     {
       "url": "/application/menu",
       "name": "Menu",
       "icon": "menu-icon tf-icons bx bx-food-menu",
-      "slug": "menu-list"
+      "slug": "menu"
     },
     {
       "url": "/application/tables",
       "name": "Masalar",
       "icon": "menu-icon tf-icons bx bx-chair",
-      "slug": "tables-list"
+      "slug": "table"
     },
     {
       "url": "/application/orders",
       "name": "Siparişler",
       "icon": "menu-icon tf-icons bx bx-basket",
-      "slug": "orders-list"
+      "slug": "order"
     }
   ]
 }
