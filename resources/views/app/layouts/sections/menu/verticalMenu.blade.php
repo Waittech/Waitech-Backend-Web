@@ -32,8 +32,9 @@
     @php
     $activeClass = null;
     $currentRouteName = Route::currentRouteName();
+    $routeSegment = explode('.', $currentRouteName)[1];
 
-    if ($currentRouteName === $menu->slug) {
+    if ($routeSegment === $menu->slug) {
     $activeClass = 'active';
     }
     elseif (isset($menu->submenu)) {

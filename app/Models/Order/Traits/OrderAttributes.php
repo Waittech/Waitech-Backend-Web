@@ -46,7 +46,7 @@ trait OrderAttributes
 
     public function getCreatedDateAttribute()
     {
-        return $this->created_at->format('m/d/Y');
+        return $this->created_at->format('d/m/Y');
     }
 
     public function getCreatedTimeAttribute()
