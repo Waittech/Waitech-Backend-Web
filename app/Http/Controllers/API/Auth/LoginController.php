@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API\Auth;
 
 use App\Helpers\JsonResponse;
+use App\Http\Resources\UserResource;
+use App\Models\Access\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +18,6 @@ class LoginController
    */
   public function login(Request $request)
   {
-
     if (!Auth::attempt($request->only('email', 'password'))) {
       return response()->json(
         (new JsonResponse)->fail(trans('auth.failed')),
@@ -24,8 +25,10 @@ class LoginController
       );
     }
 
+    $user = User::find(auth()->user()->id);
+
     return response()->json(
-      (new JsonResponse)->success(['token' => auth()->user()->api_token]),
+      (new JsonResponse)->success( new UserResource($user)),
       Response::HTTP_OK
     );
   }
