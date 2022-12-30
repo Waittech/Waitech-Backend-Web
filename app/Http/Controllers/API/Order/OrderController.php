@@ -15,7 +15,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::where('user_id', auth()->user()->id)->orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->paginate(2);
+        $orders = Order::where('user_id', auth()->user()->id)->orderBy('status', 'ASC')->orderBy('created_at', 'DESC')->paginate(10);
 
         return OrderResource::collection($orders)->additional(additional_json_success_arr());
     }
