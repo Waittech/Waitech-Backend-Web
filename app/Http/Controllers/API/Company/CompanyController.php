@@ -14,7 +14,7 @@ class CompanyController extends Controller
 {
     public function index(Request $request)
     {
-      $companies = Company::all();
+      $companies = Company::orderBy('id', 'DESC')->limit(15)->get();
 
       return response()->json((new JsonResponse())->success(CompanyResource::collection($companies), Response::HTTP_OK));
     }
