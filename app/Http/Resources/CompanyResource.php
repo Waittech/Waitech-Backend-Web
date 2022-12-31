@@ -19,6 +19,7 @@ class CompanyResource extends JsonResource
     {
       return [
         'id'           => $this->id,
+        'name'         => $this->name,
         'description'  => $this->description,
         'image'        => $this->cover_image,
         'country'      => ($country = Country::find($this->country_id)) != null ? $country->name : null,
