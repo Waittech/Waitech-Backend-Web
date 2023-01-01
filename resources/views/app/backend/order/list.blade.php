@@ -34,7 +34,7 @@
           @foreach($orders as $order)
             <tr>
               <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>#{{ $order->id }}</strong></td>
-              <td>{{ $order->table->name }}</td>
+              <td>{{ $order->table->name ?? 'x' }}</td>
               <td>{{ $order->user->name }}</td>
               <td><button class="btn border-radius btn-{{ $order->status_color }}">{{ $order->status_text }}</button></td>
               <td>₺ {{ $order->formatted_price }}</td>
